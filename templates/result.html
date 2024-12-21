@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="keywords"
+        content="extract text, extract text in image, extract text image python, extract text python, image to text python, extractor python text, extract text py3" />
+    <meta name="description"
+        content="TextExtractor it is software created to extract text from any type of image using python 3" />
+    <title>Hate Speech Prediction - Result page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" />
+
+
+</head>
+<style>
+    .button-62 {
+        background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+        border: 0;
+        margin: 2px;
+        border-radius: 5px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 2.5;
+        outline: transparent;
+        padding: 0 1rem;
+        text-align: center;
+        text-decoration: none;
+        transition: box-shadow .2s ease-in-out;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+    }
+
+    .button-62:not([disabled]):focus {
+        box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+    }
+
+    .button-62:not([disabled]):hover {
+        box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+    }
+</style>
+
+
+<body id="dark-mode">
+
+
+    <div class="preloader">
+        <div class="frame">
+            <div class="center">
+                <div class="dot-1"></div>
+                <div class="dot-2"></div>
+                <div class="dot-3"></div>
+            </div>
+        </div>
+    </div>
+   
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a style="text-decoration:none;" class="navbar-brand" href="/"><b>Hate Speech </b>Prediction</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse menu-main" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto menu-item">
+                    <li class="nav-item">
+                        <a style="text-decoration:none;" class="nav-link" href="/">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="banner">
+        <div class=".particles-js-canvas-el" id="particles-js"></div>
+
+        <div class="container zindex">
+            <div style="padding-left: 20px; padding-right: 20px">
+                <img src="{{img}}" alt="Uploaded Image" width="300px"
+                    style="margin: auto; border-radius: 10px; margin-bottom: 8px" />
+                <h3 style="
+                            color: tomato;
+                            font-size: 30px;
+                            font-family: 'Poppins', sans-serif;
+                            text-align: left;
+                            padding-bottom: 20px;
+                        ">
+                    {{var}}
+                </h3>
+                <a href="{{url_for('gettext')}}" style="margin:4px;" class="button-62">Download as text Document</a>
+                <form action="{{url_for('prediction')}}" method="POST">
+                    <label style="
+                            color: tomato;
+                            font-size: 16px;
+                            font-family: 'Poppins', sans-serif;
+                            text-align: left;
+                            padding-top: 20px;
+                        ">
+                        Custom Text</label>
+                    <textarea class="form-control" rows="5" name="inputforcomment">{{var}}</textarea>
+                    <button class="button-62 mb-2"
+                        type="submit">Predict</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+   
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.isotope.min.html') }}"></script>
+    <script src="{{ url_for('static', filename='js/circular.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+
+
+
+
+</body>
+
+</html>
